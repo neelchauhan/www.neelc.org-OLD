@@ -1,0 +1,95 @@
+<html>
+<head>
+<title>colwide</title>
+</head>
+<body>
+<h1>colwide</h1>
+<p><b>colwide</b> is a <a href="http://www.perl.org/">Perl</a> script which
+displays a specified number of a character (default: <code>#</code>) on the
+screen. This may sound useless, but can compliment
+<a href="http://tmux.sourceforge.net/">tmux</a> or
+<a href="http://www.gnu.org/software/screen/">GNU screen</a>.</p>
+<h2><a name="features"> </a> Features</h2>
+<p>And misfeatures!</p>
+<ul>
+<li>Requires <b>NO</b> Perl modules!</li>
+<li>Ability to print a specified amount of characters if specified as an
+argument</li>
+<ul>
+<li>Does not have the ability to change the default hash character
+(<code>#</code>) with an argument</li>
+</ul>
+<li>Ability to change default values, such as:</li>
+<ul>
+<li>Default character by changing <code>$char</code></li>
+<li>Default number of printed characters by changing <code>$defwidth</code></li>
+</ul>
+<li>Licensed under the
+<a href="/files/license/2BSD">Simplified BSD License</a></li>
+<li>Has no mechanism to detect terminal size</li>
+</ul>
+<h2><a name="usage"> </a> Usage</h2>
+<p>In these usage examples, I assume the following:</p>
+
+<ul>
+<li><b>colwide</b> means the script's official name, whereas
+<code>colwide</code> is the filename of the script.</li>
+<li><code>colwide</code> is downloaded to a location in your shell's
+<code>$PATH</code>.</li>
+<li>The file in your <code>$PATH</code> is called <code>colwide</code>.</li>
+<li>The execute bit (<code>+x</code>) is set on the file
+<code>colwide</code></li>
+<li><code>$char</code> is set to <code>#</code> (default)</li>
+<li><code>$defwidth</code> is set to <code>80</code> (default)</li>
+</ul>
+
+<p>Short usage info: <code>colwide [<b>charno</b>]</code>, where
+<code><b>charno</b></code> is the number of characters outputted. Leave blank
+for the default of 80 characters.</p>
+
+<p>If you run <code>colwide</code> with no arguments, and haven't changed
+<code>$char</code> or <code>$defwidth</code>, you get 80 hash (<code>#</code>)
+symbols printed to the screen. The output of <code>colwide</code> without
+any arguments is shown below:</p>
+
+<pre>
+neel@megan:~ % colwide
+################################################################################
+neel@megan:~ % 
+</pre>
+
+<p>If you specify a number as an argument, you override <code>$defwidth</code>
+and get the amount of hash (<code>#</code>) symbols you specified. Let's say
+we run <code>colwide 40</code>:</p>
+
+<pre>
+neel@megan:~ % colwide 40
+########################################
+neel@megan:~ % 
+</pre>
+
+<p>Here, <code>colwide</code> has outputted a specified amount of hash
+(<code>#</code>) symbols onto your screen, where in this case, it is 40.</p>
+
+<p>If you specify more characters to <code>colwide</code> than the width of
+your terminal, the characters will overflow, as shown in this example:</p>
+
+<pre>
+neel@megan:~ % colwide 120
+################################################################################
+########################################
+neel@megan:~ % 
+</pre>
+
+<p>That's really it for the usage information. I don't really have anything
+else to add here.</p>
+
+<h2><a name="download"> </a> Download</h2>
+<p>You can download colwide from the
+<a href="/files/colwide/0.01/">/files/colwide/0.01/</a> directory.</p>
+<a href="/">Back to neelc.org</a>
+<hr>
+email: neel&nbsp;(at)&nbsp;neelc&nbsp;(dot)&nbsp;org<br>
+last updated: September 15, 2014
+</body>
+</html>
